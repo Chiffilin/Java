@@ -1,5 +1,4 @@
 import Product.Products;
-import Worker.Workers;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -14,10 +13,10 @@ public class Main {
         System.out.println(Product.toString());
 
         System.out.println("=======================================");
-
+/**
         Workers Worker = Until.generateWorkers(scanner);
         System.out.println(Worker.toString());
-
+*/
         scanner.close();
     }
 }
