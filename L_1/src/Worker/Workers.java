@@ -1,6 +1,7 @@
 package Worker;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Workers {
     private final ArrayList<Worker> workers = new ArrayList<Worker>();
@@ -20,10 +21,18 @@ public class Workers {
     @Override
     public String toString() {
         StringBuilder answer = new StringBuilder();
+
         for(Worker worker : workers){
-            if(worker.getSalary() > 0) {
-                answer.append(String.format("\n\n[RESULT]\nSurname: %s\nName: %s\nMiddle_Name: %s\nPosition: %s\nSalary: %dd\nDate of Birthday: %s", worker.getSurname(), worker.getName(), worker.getMiddle_name(), worker.getPosition(),worker.getSalary(), worker.getDateOfBirthday()));
+            Date date1 = worker.getDateOfBirthday();
+            for(Worker worker2 : workers){
+                Date date2 = worker2.getDateOfBirthday();
+                if(date1.before(date2)) {
+                    answer.append(String.format("\n\n[RESULT]\nSurname: %s\nName: %s\nMiddle_Name: %s\nPosition: %s\nSalary: %d\nDate of Birthday: %s", worker.getSurname(), worker.getName(), worker.getMiddle_name(), worker.getPosition(),worker.getSalary(), worker.getDateOfBirthday()));
+                } else {
+                    date1 = worker.getDateOfBirthday();
+                }
             }
+
         }
         return answer.toString();
     }

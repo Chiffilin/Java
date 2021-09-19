@@ -89,7 +89,7 @@ public class Until {
             simpleWorker.setMiddle_name(scanner.nextLine());
 
             //Position
-            System.out.print("Enter the Position");
+            System.out.print("Enter the Position: ");
             simpleWorker.setPosition(scanner.nextLine());
 
             //Salary
